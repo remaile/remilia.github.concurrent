@@ -3,7 +3,6 @@ package com.huntech.springbootconcurrent01;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,7 +12,7 @@ import java.util.concurrent.Executors;
  * @Author remilia
  * @Create 2019-06-18
  */
-@Component
+//@Component
 public class FixedThreadPoolTest implements CommandLineRunner {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FixedThreadPoolTest.class);
@@ -24,6 +23,7 @@ public class FixedThreadPoolTest implements CommandLineRunner {
         for (int i = 0; i < 10 ; i++) {
             exes.execute(new MyWork());
         }
+
         exes.shutdown();
     }
 }
